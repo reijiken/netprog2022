@@ -50,7 +50,7 @@ int main(int argc, char const* argv[])
    char buf[1024];
     while(1)
     {
-        if(recv(sockfd, buf, sizeof(buf), 0) == -1)
+        if(recv(clientfd, buf, sizeof(buf), 0) == -1)
         {
             perror("recv");
             return 1;
@@ -62,7 +62,7 @@ int main(int argc, char const* argv[])
         {
             break;
         }
-        if(send(sockfd, buf, strlen(buf), 0) == -1)
+        if(send(clientfd, buf, strlen(buf), 0) == -1)
         {
             perror("send");
             return 1;
